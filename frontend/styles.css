@@ -1,0 +1,77 @@
+body {
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+}
+h1{
+    font-family: "Rubik Vinyl";
+}
+.container {
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 400px;
+    background: rgb(179, 168, 187);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+input {
+    padding: 10px;
+    outline: none;
+    width: 80%;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: "Open Sans";
+   
+}
+
+
+
+button {
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  button {
+    padding: 0.25em 0.75em;
+  }
+}
+
+
+#result {
+    margin-top: 20px;
+}
+
+#result p{
+    background-color: rgb(135, 108, 57);
+    font-family: "Roboto Mono";
+    padding: 5px 0;
+    border-radius: 5px;
+    color: rgb(236, 220, 220);
+}
+

@@ -1,0 +1,36 @@
+What This Code Does:
+This program is an email domain verifier that checks a given domain for:
+Whether it has MX (Mail Exchange) records, which are used for email delivery.
+Whether it has an SPF (Sender Policy Framework) record, which is used to prevent email spoofing.
+Whether it has a DMARC (Domain-based Message Authentication, Reporting, and Conformance) record,
+which improves email authentication.
+
+What are MX, SPF, and DMARC records, and why are they important?
+
+MX records specify the mail servers for a domain.
+SPF records prevent email spoofing by defining authorized sending servers.
+DMARC records enhance email authentication and provide reporting.
+v=spf1 anf _dmarc -- conventions for storing spf and dmarc records
+
+Why validSMTP: false Might Happen
+SMTP Verification Limitations:
+
+Some mail servers are configured to reject or ignore SMTP verification requests for security or anti-spam purposes.
+Servers like Gmail often do not respond to SMTP VRFY or RCPT TO commands for email verification.
+Firewall or Anti-Abuse Mechanisms:
+
+The mail server may block your request because it sees the verification attempt as suspicious.
+Rate-limiting or geographic restrictions might apply.
+Temporary Server Issues:
+
+The email server could be temporarily unavailable or experiencing downtime.
+Your IP or Server Configuration:
+
+If you're testing from a local machine, your IP might not have the proper reputation to query SMTP servers.
+Some servers only respond to known or whitelisted IPs.
+Incorrect Implementation of the SMTP Check:
+
+If the smtp.Dial() or conn.Rcpt() commands are not handled correctly, the server might reject the request even for valid emails.
+Catch-All Domain:
+
+Some domains accept all email addresses (even invalid ones) and return false during validation because they cannot verify the specific address.
